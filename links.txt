@@ -1,0 +1,9 @@
+обучение нод js
+https://metanit.com/web/nodejs/2.8.php
+https://learn.javascript.ru/promise-basics
+
+для тестовых запросов http/api
+https://dummyjson.com/
+
+https://expressjs.com/ru/starter/generator.html
+документация
