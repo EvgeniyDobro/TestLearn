@@ -7,3 +7,25 @@ https://dummyjson.com/
 
 https://expressjs.com/ru/starter/generator.html
 документация
+
+онлайн среда разработки
+https://replit.com/~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
