@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<style>
+.html {
+	padding: 250 250 250 250;
+}
+button {
+	color:#4169E1; 
+	background-color:#E0FFFF;
+	border-radius:5px;
+	cursor:pointer;
+	margin-top: 10px;
+	margin-left:5px
+}
+button:hover {
+background-color: #AFEEEE;
+}
+button:focus {
+box-shadow: 0 0 0 3px lightskyblue;
+background-color: #4682B4;
+}
+.display {
+	display: inline-block;
+	background-color: #EAECEE;
+	height: 300px;
+	width: 300px;
+	padding: 20px 20px 20px 20px;
+	border: 2px solid;
+	border-color: black;
+	border-width: 2px;
+}
+.sideInfo {
+	display: inline-block;
+	background-color: #EAECEE;
+	height: 300px;
+	width: 80px;
+}
+
+.wrapper {
+
+}
+
+</style>
+</head>
+<body>
+
+	<div class='wrapper' id='wrapper'>
+		<div class='display' id='display'>
+		Hello, Hero!
+		</div>
+		<div class='sideInfo' id='sideInfo'>
+		
+		</div>
+	</div>
+
+<button onclick="watchPocket()"> My Items </button>
+<button onclick="generateArmor()"> Generate New Item </button>
+
+<script>
+
+let Res = 0;
+let itemsID = 0;
+let caftPower = 10;
+
+class Armor {
+    life;
+    armorValue;
+	itemsID;
+    constructor(life, armorValue){
+		itemsID += 1;
+        this.life = life;
+        this.armorValue = armorValue;
+		this.itemsID = itemsID;
+    }
+	print(){ 
+	return `ID:${this.itemsID}, LIFE:${this.life}, ARMOR:${this.armorValue};`;
+	}
+};
+let myPocket = [];
+
+const generateArmor = () => {
+	let item = new Armor( Math.round(Math.random() * caftPower), Math.round(Math.random() * caftPower));
+	myPocket.push(item);
+	document.getElementById("display").innerHTML = `You craft this: ${item.print()}`;
+};
+
+
+const watchPocket = () => {
+const result = myPocket.map( (item) => `<li>${item.print()}</li>` ).join('\n');
+
+document.getElementById("display").innerHTML = `Your Pocket: ${result}`;
+};
+	
+</script>
+</body>
+</html>
