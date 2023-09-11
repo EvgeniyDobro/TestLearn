@@ -1,0 +1,224 @@
+GitHub
+EvgeniyDobro
+Dedmoroz88%
+git
+name = EvgenDobro
+email = evgendobrishkin@gmail.com
+
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+# Выполняем инициализацию
+git init
+С помощью команды git status можно посмотреть статус репозитория
+
+git add README.md
+git add .
+git add --all
+
+git commit -m 'second commit'
+
+= на ГитХаб =
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+настройка
+https://github.com/Hexlet/ru-instructions/blob/main/git.md
+
+git config --global user.name "dobroevgen"
+git config --global user.email "evgendobrishkin@gmail.com"
+
+ssh-keygen -t ed25519  -C "evgendobrishkin@gmail.com"
+
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+echo "# ansible-test" >> README.md
+git init
+git add README.md ( git add --all )
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:EvgeniyDobro/ansible-test.git
+git push -u origin main
+
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+…or create a new repository on the command line
+echo "# ansible-test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:EvgeniyDobro/ansible-test.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin git@github.com:EvgeniyDobro/ansible-test.git
+git branch -M main
+git push -u origin main
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+КЛОНИРОВАНИЯ С ХАБ
+git clone git@github.com:EvgeniyDobro/hexlet-git
+it pull --rebase, которая скачивает из внешнего репозитория новые коммиты и добавляет их в локальный репозиторий
+
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+Для этого в Git есть команда git diff, которая показывает разницу между тем, что было и что стало:
+
+git diff
+# Выведет все изменения, сделанные в рабочей директории
+# которые были добавлены в индекс
+git diff --staged
+
+Команда git log
+git log -p
+# Тут все коммиты с полным дифом
+# Промотать вперед — кнопка f, промотать назад — b
+# Выйти из режима просмотра — q
+git log --oneline // удобно читать
+
+
+Команда git show
+С помощью хеша можно посмотреть все изменения, сделанные в рамках одного коммита
+Команда git blame
+git blame <путь до файла>. Эта команда выводит файл и рядом с каждой строчкой показывает того, кто ее менял и в каком коммите:
+Команда git grep
+Команда git grep ищет совпадение с указанной строкой во всех файлах проекта. Это очень удобная команда для быстрого анализа из терминала. Она удобнее обычного grep, потому что знает про игнорирование и не смотрит в директорию .git, а еще умеет искать по истории:
+
+
+Отмена изменений в рабочей директории
+# Выполняем очистку
+# -f – force, -d – directory
+git clean -fd
+
+git restore INFO.md
+git restore --staged INFO.md // если добавлена в индексацию
+
+git revert:
+создает коммит, который отменяет прошлый
+
+git reset
+// git reset --hard HEAD~2 // удалить 2 последних
+Это опасная операция, которую нужно делать только в том случае, если речь идет про новые коммиты, которых нет ни у кого, кроме вас.
+echo 'no code no pain' > README.md
+git add README.md
+git commit -m 'update README.md'
+[main f85e3a6] update README.md
+ 1 file changed, 1 insertion(+)
+# Теперь откатываем последний коммит
+git reset HEAD~
+Unstaged changes after reset:
+M   README.md
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+    modified:   README.md
+
+# Увидели, что забыли добавить файл
+# Добавляем
+
+git add README.md
+git commit --amend
+# После этой команды откроется редактор, ожидающий ввода описания коммита
+# Здесь можно поменять сообщение или выйти из редактора, оставив старое
+
+Чтобы не открывался редактор для ввода описания коммита к команде git commit --amend можно добавить опцию --no-edit. В этом случае описание коммита не изменится:
+
+# Добавляет абсолютно все изменения рабочей директории в индекс
+git add .
+
+# Флаг -a автоматически добавляет все изменения рабочей директории в индекс
+git commit -am 'do something'
+
+Путешествия по комитам
+git log --oneline
+git checkout e6f625c
+
+узнать где находишься
+git branch
+
+
+git log -p --oneline -- todo.md // инфо по изменению одного файла
+git log --name-status
+
+git log --graph
+# Неполный вывод, чтобы не отвлекаться от сути
+
+# HEAD~1 означает: взять голову и удалить один коммит, начиная от нее
+# То есть мы удаляем только последний коммит
+git reset --hard HEAD~1
+
+Git позволяет гибко настраивать игнорирование определенных файлов и директорий. Делается это с помощью файла .gitignore, который нужно создать в корне проекта.
+# В этом файле можно оставлять комментарии
+# Имя файла .gitignore
+# Файл нужно создать самостоятельно
+
+# Каждая строчка — это шаблон, по которому происходит игнорирование
+
+# Игнорируем файл в любой директории проекта
+access.log
+
+# Игнорируем директорию в любой директории проекта
+node_modules/
+
+# Игнорируем каталог в корне рабочей директории
+/coverage/
+
+# Игнорируем все файлы с расширением sqlite3 в директории db
+# При этом не игнорируются такие же файлы внутри любого вложенного каталога в db
+# Например, /db/something/lala.sqlite3
+/db/*.sqlite3
+
+# Игнорировать все .txt файлы в каталоге doc/ на всех уровнях вложенности
+doc/**/*.txt
+
+
+.gitignore
+
+# Прячем файлы
+# После этой команды пропадут все измененные файлы
+# независимо от того, добавлены они в индекс или нет
+git stash
+
+# Восстанавливаем
+git stash pop
+
+Стэш в Git работает по принципу стека. Он позволяет сохранить внутрь любое количество изменений и восстановить их в обратном порядке:
+git stash
+# Изменяем файлы
+git stash
+# Возвращаем последние изменения
+git stash pop
+# Возвращаем предпоследние изменения
+git stash pop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
