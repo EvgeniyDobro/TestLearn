@@ -10,6 +10,9 @@ https://ru.hexlet.io/blog/posts/breakpoints-js
 внешние скрипты
 <script src="/assets/application.js"></script>
 
+Element: html-элемент
+Attr: атрибут html-элемента
+Document: корневой узел html-документа
 
         -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 <======|||    Глобальный объект Window          |||=======>
@@ -82,8 +85,101 @@ document.body.innerHTML = tags.join('\n');
 <======|||       Навигация по DOM-дереву       |||=======>
         -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+https://developer.mozilla.org/ru/docs/Web/API/Node
+https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+
+узлы делятся на два типа:
+Листовые — не содержат внутри себя других узлов
+Внутренние – у них есть узлы
+
+const html = document.documentElement;
+// Свойство tagName узла содержит имя тега в верхнем регистре
+console.log(html.tagName); // => 'HTML'
+
+// Содержимое тега HTML в виде узлов DOM-дерева
+// Текст тоже представлен узлом
+html.childNodes; // [head, text, body]
+
+// Потому что head выше body
+html.firstChild; // <head>...</head>
+html.lastChild; // <body>...</body>
+
+// Второй узел, обращение по индексу
+html.childNodes[1]; // #text
+
+Теги <body> и <head> всегда присутствуют внутри документа, 
+поэтому можно вынести их на уровень объекта document для более простого доступа:
+document.head;
+document.body;
+
+По дереву можно не только спускаться, но и подниматься:
+// Родитель body это html
+document.documentElement === document.body.parentNode; // true
+document.body === document.body.childNodes[2].parentNode; // true
+
+const list = Array.from(nodes);
+// Теперь у нас обычный массив и доступные методы, например, filter
+// Можем отфильтровать нужные элементы
+const filtered = list.filter((item) => item.textContent.includes('Навигация по DOM-дереву'));
+// И извлечь из них данные, например, имена тегов
+const filteredTags = filtered.map((item) => item.tagName);
+console.log(filteredTags); // => ['HEAD', 'BODY']
+
+// Самый простой способ посмотреть тип
+document.body.toString(); // "[object HTMLBodyElement]"
+document.body instanceof HTMLBodyElement; // true
+
+TEST: парсинг сайта по тегу P
+
+import extractData from "./extractor.js";
+const data = extractData(document.documentElement);
+console.log(data);
+
+const extractData = (ref) => {
+  const result = [];
+  const nodes = ref.parentNode.body.children
+  const list = Array.from(nodes);
+  //console.log(list);
+  //list.forEach((el) => console.log(el.tagName));
+  const data = list.filter((element) => (element.tagName === 'P'));
+  return data.map((element) => (element.innerHTML.trim()))
+};
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======||| Декларативный поиск по DOM-дереву   |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
+
+Это самый простой вариант поиска:
+<p id="content">Это параграф</p>
+const el = document.getElementById('content');
 
 
+// Поиск по всему дереву
+// Возвращаются все элементы с таким классом, причем они могут быть совершенно разными
+const collection = document.getElementsByClassName('row');
+// Этот метод позволяет искать не только в целом документе,
+// но и среди потомков любого элемента
+el.getElementsByClassName('row');
+
+document.getElementsByTagName('span');
+// Поиск всех элементов
+document.getElementsByTagName('*');
+// Поиск среди потомков el
+el.getElementsByTagName('span');
+
+ПОИСК по СЕЛЕКТОРУ
+https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
+<ul id="menu">
+  <li class="odd"><span>Первый</span> пункт</li>
+  <li>Второй</li>
+  <li class="odd"><span>Третий</span> пункт</li>
+</ul>
+// Этот код возвращает первый найденный элемент по указанному селектору
+// Ищем элемент с id=menu
+const ul = document.querySelector('#menu');
+// Все спаны, вложенные в теги с классом .odd
+const spans = ul.querySelectorAll('.odd > span');
 
 
 
