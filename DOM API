@@ -1,0 +1,110 @@
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||    JS в Браузере                    |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+https://ru.hexlet.io/blog/posts/rukovodstvo-kak-uvelichit-skorost-zagruzki-stranitsy-so-skriptami-s-pomoschyu-defer-i-async
+https://ru.hexlet.io/blog/posts/breakpoints-js
+
+<script>
+</script>
+
+внешние скрипты
+<script src="/assets/application.js"></script>
+
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||    Глобальный объект Window          |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+https://developer.mozilla.org/ru/docs/Web/API/Window
+
+// Открывает новую вкладку
+window.open();
+
+// Возвращает объект, содержащий информацию об экране
+window.screen;
+// Screen {availWidth: 1280, availHeight: 775, width: 1280, height: 800, …}
+// Перемещает страницу до точки (x-coord, y-coord)
+window.scrollTo(0, 1000);
+// Видимые высота и ширина страницы
+// Меняются при изменении размеров окна
+window.innerHeight;
+window.innerWidth;
+
+создание глобальной переменной:
+window.myvar = 'Dont do it in real life';
+
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||    BOM-объекты                       |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+https://developer.mozilla.org/ru/docs/Web/API/Navigator
+https://developer.mozilla.org/ru/docs/Web/API/Location
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
+
+BOM (Browser Object Model) — это набор глобальных объектов, 
+которые управляют поведением браузера. Все они также находятся внутри window.
+
+переход на страницу
+location.href = 'https://hexlet.io' // текукщая страница
+
+TEST:
+Реализуйте и экспортируйте по умолчанию функцию. 
+При вызове она должна делать переход на страницу и возвращать начальную часть строки 
+с именем совместимого браузера (User agent) и текущей открытой страницей.
+Адрес страницы передается через параметр, а результат должен быть в виде строки вида 'Mozilla/5.0 https://hexlet.io'. 
+Версия браузера записывается после косой черты, адрес страницы после пробела:
+
+export default (href) => {
+  window.location.href = href;
+  const { userAgent } = window.navigator;
+  const [agentName] = userAgent.split(' ');
+  return `${agentName} ${window.location.href}`;
+};
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||               DOM                   |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Выводим содержимое тега <body>
+console.log(document.body.innerHTML);
+
+// Этот заголовок заменит всю страницу (тег body)
+document.body.innerHTML = '<h1>For Hexlet!</h1>';
+
+TEST: переводим строку текста в <p>
+const text = document.body.innerHTML.trim();
+const lines = text.split('\n');
+const tags = lines.map((line) => `<p>${line.trim()}</p>`);
+document.body.innerHTML = tags.join('\n');
+
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||       Навигация по DOM-дереву       |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
