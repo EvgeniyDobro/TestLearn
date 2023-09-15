@@ -117,6 +117,7 @@ document.body;
 document.documentElement === document.body.parentNode; // true
 document.body === document.body.childNodes[2].parentNode; // true
 
+ПЕРЕВОДИМ В МАССИВ
 const list = Array.from(nodes);
 // Теперь у нас обычный массив и доступные методы, например, filter
 // Можем отфильтровать нужные элементы
@@ -152,7 +153,7 @@ https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
 
 Это самый простой вариант поиска:
 <p id="content">Это параграф</p>
-const el = document.getElementById('content');
+const el = document.getElementById('content'); ===================> По АйДи
 
 
 // Поиск по всему дереву
@@ -168,7 +169,7 @@ document.getElementsByTagName('*');
 // Поиск среди потомков el
 el.getElementsByTagName('span');
 
-ПОИСК по СЕЛЕКТОРУ
+ПОИСК по СЕЛЕКТОРУ ====================================================> По селектору
 https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
 <ul id="menu">
   <li class="odd"><span>Первый</span> пункт</li>
@@ -180,6 +181,100 @@ https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
 const ul = document.querySelector('#menu');
 // Все спаны, вложенные в теги с классом .odd
 const spans = ul.querySelectorAll('.odd > span');
+
+ ТЕСТ:Нам нужно извлечь данные с фиксированной структурой.
+
+  // BEGIN
+  const root = document.querySelector('.content');
+
+  const categoryTitleElement = root.querySelector('h1');
+  const categoryTitle = categoryTitleElement.innerHTML;
+  const categoryDescriptionElement = root.querySelector('.description');
+  const categoryDescription = categoryDescriptionElement.innerHTML;
+
+  const itemElements = root.querySelectorAll('.links div');
+  const items = Array.from(itemElements).map((element) => {
+    const titleElement = element.querySelector('a');
+    const descriptionElement = element.querySelector('p');
+
+    return {
+      title: titleElement.innerHTML,
+      description: descriptionElement.innerHTML,
+    };
+  });
+
+  return {
+    title: categoryTitle,
+    description: categoryDescription,
+    items,
+  };
+  // END
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||    Манипулирование DOM-деревом      |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+const body = document.body;
+console.log(body);
+// <ul><li>item 1</li><li>item 2</li></ul>
+body.innerHTML = '<b>make</b> love';
+console.log(body.innerHTML);
+// <b>make</b> love
+console.log(body.childNodes);
+// [b, text]
+
+document.body.textContent = '<b>make</b> love';
+console.log(document.body.innerHTML);
+// Все специальные символы оказываются замененными
+// "&lt;b&gt;make&lt;/b&gt; love"
+
+// Создаем текстовый узел
+const textNode = document.createTextNode('life is life');
+
+// Создаем элемент p
+const pEl = document.createElement('p');
+
+// Добавляем textNode в конец списка childNodes элемента pEl
+pEl.append(textNode);
+// pEl.textContent = 'life is life';
+
+const el = document.createElement('div');
+el.append(pEl);
+
+console.log(el);
+// <div><p>life is life</p></div>
+
+Старый API
+Описанные выше функции появились не так давно. 
+Большая часть кода написана с использованием других функций, список которых ниже:
+
+parent.appendChild(el) – добавляет el в конец списка потомков
+parent.insertBefore(el, nextElSibling) – добавляет el в список потомков parent перед nextElSibling
+parent.removeChild(el) – удаляет el из потомков parent
+parent.replaceChild(newEl, el) – заменяет el на newEl
+
+var articleDiv = document.querySelector("div.content");
+// создаем элемент
+var elem = document.createElement("h2");
+// создаем для него текст
+var elemText = document.createTextNode("Привет мир");
+// добавляем текст в элемент в качестве дочернего элемента
+elem.appendChild(elemText);
+// добавляем элемент в блок div
+articleDiv.appendChild(elem);
+
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<======|||    Управление узлами DOM            |||=======>
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+
+
+
+
+
 
 
 
