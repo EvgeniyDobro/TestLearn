@@ -11,7 +11,7 @@
 
 ```bash
 ps -eF
-ps -efL // с потоками
+ps -efL ### с потоками
 ```
 
 - UID - имя пользователя, от имени которого работает процесс;
@@ -38,12 +38,12 @@ df -h ### свободное место
 
 ```bash
 mv ### переместить, переименовать 
-ls / ll #### просмотр файлов https://losst.pro/komanda-ls-linux
+ls ### просмотр файлов https://losst.pro/komanda-ls-linux
 find /KAFKADATA/ -iname "REPL.EKSPZRCLMEVENT.V1-2" #### поиск файла, папки - 
 find / -name "log4j*.properties" 2>/dev/null
-### альтернатива locate ###
-sed - https://losst.pro/komanda-sed-linux
-sed -i 's/\r//' _имяфайла_ ### правим каретку
+( альтернатива locate )
+sed - https://losst.pro/komanda-sed-linux 
+sed -i 's/\r//' _имяфайла_ ### правим каретку, например, если закинул текстовый файл с windows
 $sed 's/unix/linux/' geekfile.txt ### Следующая команда заменит в целевом файле вхождения слова unix на linux:
 
 ls /usr/bin | sort -f | less ### удобный просмотр вывода
