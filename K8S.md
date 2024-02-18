@@ -8,3 +8,5 @@ __Кластер K8S__ хранит в себя узлы (NODE) - которые
 Master Node vs Slave Node
 ![Image alt](https://github.com/EvgeniyDobro/TestLearn/raw/main/pic/k8s.jpg)
 
+## Управление кластером
+![Image alt](https://github.com/EvgeniyDobro/TestLearn/raw/main/pic/k8s-cluster-control.jpg)
