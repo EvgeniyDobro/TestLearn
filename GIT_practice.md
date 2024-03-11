@@ -15,13 +15,9 @@ git commit -m 'adding DN in vars.yml'
 ## инициализация 
 ```
 git remote add origin ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git
-```
-нужная ветка
-```
+//нужная ветка
 git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git -b kafka-ift
-```
-все
-```
+//все
 git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git  
 ```
 ### между ветками
@@ -47,7 +43,6 @@ git merge upstream/master
 //В том случае, если был использован первый вариант, то следующий пуш следует выполнить с флагом -f git
 git push -f origin admin_info 
 ```
-
 ### отмена
 ```
 git stash
