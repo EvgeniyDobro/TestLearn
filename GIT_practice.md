@@ -14,26 +14,34 @@ git commit -m 'adding DN in vars.yml'
 ## инициализация 
 
 git remote add origin ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git
-git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git -b kafka-ift ### нужная ветка
-git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git ### все
+нужная ветка
+git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git -b kafka-ift
+все
+git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git  
 
 ### между ветками
-cd myfork_ci03189783_synapse_es_inventories/ ### переходим в папку ???
-git branch -a ### смотрим все ветки и где мы находимся
-git checkout kafka-ift ### переключаемся на нужную
+переходим в папку ???
+cd myfork_ci03189783_synapse_es_inventories/ 
+смотрим все ветки и где мы находимся
+git branch -a 
+переключаемся на нужную
+git checkout kafka-ift
 
 ## инициализация изменений 
-
-git remote add upstream ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git ### добавить оригинальный репозиторий в качестве удаленного.
-git fetch upstream ### Потом необходимо получить все изменения с этого репозитория командой 
-git rebase upstream/admin_info ### обновляем ветку с актуальной
+ добавить оригинальный репозиторий в качестве удаленного.
+git remote add upstream ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git
+потом необходимо получить все изменения с этого репозитория командой 
+git fetch upstream 
+обновляем ветку с актуальной
+git rebase upstream/admin_info 
 
 
 git commit -m 'added offsets comand'
 
-
-git merge upstream/master ### Если вы не по каким-то причинам не хотите переписывать историю коммитов, то вместо последней команды следует использовать 
-git push -f origin admin_info ### В том случае, если был использован первый вариант, то следующий пуш следует выполнить с флагом -f git
+Если вы не по каким-то причинам не хотите переписывать историю коммитов, то вместо последней команды следует использовать 
+git merge upstream/master 
+В том случае, если был использован первый вариант, то следующий пуш следует выполнить с флагом -f git
+git push -f origin admin_info 
 
 ### отмена
 
