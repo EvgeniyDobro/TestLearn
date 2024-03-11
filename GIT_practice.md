@@ -1,18 +1,20 @@
 # GIT
+[инициализация,настройки пользователя](#инициализация,настройки-пользователя)
+[добавление репозитория](#добавление-репозитория )
+[между-ветками](#между-ветками)
+[УДАЛЯЕМ ПАПКУ](#УДАЛЯЕМ-ПАПКУ)
+[Чтобы переключиться на ветку другого репозитория](#Чтобы-переключиться-на-ветку-другого-репозитория)
+[УДАЛЯЕМ ПАПКУ](#ЧИНИМ-ОШИБКУ-HEAD)
 
-## настройки пользователя
+## инициализация,настройки пользователя
 ```
 git config --global user.name "Evgeniy Dobryshkin"
 git config --global user.email EYurDobryshkin@sberbank.ru
-
-git commit -m ''
-git push --all --progress "MyFork_CI03189783_SYNAPSE_ES_INVENTORIES"
-git push "MyFork_CI03189783_SYNAPSE_ES_INVENTORIES" kafka-ift
-
-git push origin kafka-ift 
-git commit -m 'adding DN in vars.yml'
+git init
+//узнать статус
+git status 
 ```
-## инициализация 
+## добавление репозитория 
 ```
 git remote add origin ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git
 //нужная ветка
@@ -20,7 +22,7 @@ git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci0318978
 //все
 git clone ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git  
 ```
-### между ветками
+## между ветками
 ```
 //переходим в папку ???
 cd myfork_ci03189783_synapse_es_inventories/ 
