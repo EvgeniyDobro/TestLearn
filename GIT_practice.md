@@ -1,6 +1,7 @@
 # GIT
 
 ## настройки пользователя
+```
 git config --global user.name "Evgeniy Dobryshkin"
 git config --global user.email EYurDobryshkin@sberbank.ru
 
@@ -10,7 +11,7 @@ git push "MyFork_CI03189783_SYNAPSE_ES_INVENTORIES" kafka-ift
 
 git push origin kafka-ift 
 git commit -m 'adding DN in vars.yml'
-
+```
 ## инициализация 
 
 git remote add origin ssh://git@sbrf-bitbucket.sigma.sbrf.ru:7999/~19373179/myfork_ci03189783_synapse_es_inventories.git
