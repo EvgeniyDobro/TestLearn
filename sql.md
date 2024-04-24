@@ -10,8 +10,8 @@ DROP DATABASE hexlet;
 CREATE DATABASE hexlet;
 ```
 ```sql
-DROP DATABASE hexlet ### удаляет базу данных с именем hexlet
-CREATE DATABASE hexlet ### создает базу данных с таким же именем
+DROP DATABASE hexlet -- удаляет базу данных с именем hexlet
+CREATE DATABASE hexlet -- создает базу данных с таким же именем
 ```
 создание
 CREATE TABLE courses (
