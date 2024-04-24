@@ -86,14 +86,17 @@ DELETE FROM courses WHERE slug = 'bash';
 TRUNCATE courses;
 Он предназначен для полной очистки таблиц 
  
+---
 
---------------------------------------------
- ==0_0_0_0== -Выборка данных — ==0_0_0_0==
---------------------------------------------
+### Выборка данных
 
-SELECT * FROM users;
-Этот запрос достает все содержимое таблицы users
+```sql
+SELECT * FROM users --Этот запрос достает все содержимое таблицы users
+SELECT t.id, t.name, t.description from edms_contour t; --использование псевдоминов
+SELECT t.id "пример", t.name "имя", t.description "описание" from edms_contour t; --использование псевдоминов
+```
 
+```sql
 SELECT
     username,
     created_at
@@ -101,7 +104,7 @@ FROM users
 WHERE birthday < '2018-10-21'
 ORDER BY birthday DESC -- сортировка, DESC - обратная
 LIMIT 2;
-
+```
 
 --------------------------------------------------------------
  ==0_0_*_*_*_0_0== -Первая нормальная форма— ==0_0_*_*_*_0_0==
