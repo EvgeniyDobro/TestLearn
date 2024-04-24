@@ -9,7 +9,7 @@
 ---
 > **TCL - Transaction Control Language.** Язык управления транзакциями:
 ---
-### Создание таблиц
+## Создание таблиц
 
 https://postgrespro.ru/docs/postgresql/15/sql-select
 ```sql
@@ -199,9 +199,10 @@ CREATE TABLE products (
     price numeric
 );
 
------------------------------------------------------------------------
-==0_0_*_*_*_0_0== Изменение структуры таблицы (ALTER) ==0_0_*_*_*_0_0==
------------------------------------------------------------------------
+---
+
+## Изменение структуры таблицы (ALTER)
+
 
 Наиболее распространенные команды:
 
@@ -244,9 +245,10 @@ ALTER TABLE users RENAME COLUMN name TO first_name;
 ALTER TABLE users DROP COLUMN age;
 ALTER TABLE users ALTER COLUMN first_name SET NOT NULL;
 
--------------------------------------------------------
-==0_0_*_*_*_0_0== Сортировка (ORDER) ==0_0_*_*_*_0_0==
--------------------------------------------------------
+---
+
+## Сортировка (ORDER)
+
 
 SELECT * FROM users ORDER BY username;
 Прямой порядок сортировки
@@ -278,9 +280,10 @@ SELECT * FROM users ORDER BY created_at DESC;
 -- поля, которые содержат NULL, идут последними
 SELECT * FROM users ORDER BY created_at DESC NULLS LAST;
 
-----------------------------------------------------
-==0_0_*_*_*_0_0== Условия (WHERE) ==0_0_*_*_*_0_0==
-----------------------------------------------------
+---
+
+### Условия (WHERE)
+
 
 -- выбрать всех пользователей с идентификатором, НЕ равным трем
 SELECT * FROM users WHERE id != 3;
@@ -320,17 +323,19 @@ SELECT * FROM users WHERE email LIKE '%hotmail.com';
 
 Обратите внимание на то, что этот поиск регистрозависимый. Если вы хотите искать без учета регистра, то используйте ILIKE.
 
---------------------------------------------------
-==0_0_*_*_*_0_0== Лимит (LIMIT) ==0_0_*_*_*_0_0==
---------------------------------------------------
+---
+
+##  Лимит (LIMIT)
+
 
 SELECT * FROM users ORDER BY id LIMIT 10;
 через пагинацию
 SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 10;
 
-----------------------------------------------
-==0_0_*_*_*_0_0== DISTINCT ==0_0_*_*_*_0_0==
-----------------------------------------------
+---
+
+## DISTINCT
+
 
 Чтобы имена из примера выше не дублировались, сделаем такой запрос:
 SELECT DISTINCT first_name FROM users;
@@ -338,11 +343,10 @@ SELECT DISTINCT first_name FROM users;
 SELECT COUNT(DISTINCT first_name) FROM users;
 Такой запрос покажет количество уникальных имен.
 
+---
 
+## ФУНКЦИИ
 
--------------------------------------------------------
-==0_0_*_*_*_0_0== ФУНКЦИИ ==0_0_*_*_*_0_0==
--------------------------------------------------------
 
 SELECT COUNT(*) FROM users WHERE birthday < '2018-10-21';
 
@@ -376,9 +380,10 @@ SELECT SUM(amount) FROM orders
 SELECT AVG(amount) FROM orders
   WHERE created_at BETWEEN '2016-01-01' AND '2016-12-31';
 
--------------------------------------------------------
-==0_0_*_*_*_0_0== Группировка (GROUP) ==0_0_*_*_*_0_0==
--------------------------------------------------------
+---
+
+## Группировка (GROUP)
+
 
 SELECT user_id, COUNT(*) FROM topics GROUP BY user_id;
 
@@ -407,7 +412,7 @@ ORDER BY year_of_birthday;
 
 
 
-## Соединения (JOINS) ==0_0_*_*_*_0_0==
+## Соединения (JOINS)
 
 https://postgrespro.ru/docs/postgresql/15/tutorial-join
 
