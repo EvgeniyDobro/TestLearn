@@ -1,3 +1,4 @@
+#SQL
 > SQL (англ. structured query language — «язык структурированных запросов») — декларативный язык программирования, применяемый для создания, модификации и управления данными в реляционной базе данных, управляемой соответствующей системой управления базами данных.
 ---
 
@@ -8,9 +9,10 @@ https://postgrespro.ru/docs/postgresql/15/sql-select
 DROP DATABASE hexlet;
 CREATE DATABASE hexlet;
 ```
-DROP DATABASE hexlet — удаляет базу данных с именем hexlet
-CREATE DATABASE hexlet — создает базу данных с таким же именем
-
+```sql
+DROP DATABASE hexlet ### удаляет базу данных с именем hexlet
+CREATE DATABASE hexlet ### создает базу данных с таким же именем
+```
 создание
 CREATE TABLE courses (
     name          varchar(255),
