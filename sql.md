@@ -10,8 +10,8 @@
 > **TCL - Transaction Control Language.** Язык управления транзакциями:
 ---
 ## Создание таблиц
-
 https://postgrespro.ru/docs/postgresql/15/sql-select
+
 ```sql
 DROP DATABASE hexlet;
 CREATE DATABASE hexlet;
@@ -48,7 +48,6 @@ FALSE 'f' 'false' 'n''no''off''0'
 ---
 
 ## Вставка и модификация данных
-
 https://postgrespro.ru/docs/postgresql/15/ddl-alter#id-1.5.4.8.11
 
 INSERT — запрос на вставку данных
@@ -166,7 +165,6 @@ CREATE TABLE orders (
 
 ## Автоинкремент
 
-
 CREATE TABLE colors (
   -- Одновременное использование и первичного ключа и автогенерации
   id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -183,7 +181,6 @@ column_name type GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY[ ( sequence_optio
 ---
 
 ## Ограничения
-
 
 Not Null
 CREATE TABLE products (
@@ -202,7 +199,6 @@ CREATE TABLE products (
 ---
 
 ## Изменение структуры таблицы (ALTER)
-
 
 Наиболее распространенные команды:
 
@@ -249,7 +245,6 @@ ALTER TABLE users ALTER COLUMN first_name SET NOT NULL;
 
 ## Сортировка (ORDER)
 
-
 SELECT * FROM users ORDER BY username;
 Прямой порядок сортировки
 Если ничего дополнительно не указывать, то ORDER BY сортирует в прямом порядке — от меньшего к большему.
@@ -283,7 +278,6 @@ SELECT * FROM users ORDER BY created_at DESC NULLS LAST;
 ---
 
 ### Условия (WHERE)
-
 
 -- выбрать всех пользователей с идентификатором, НЕ равным трем
 SELECT * FROM users WHERE id != 3;
@@ -327,7 +321,6 @@ SELECT * FROM users WHERE email LIKE '%hotmail.com';
 
 ##  Лимит (LIMIT)
 
-
 SELECT * FROM users ORDER BY id LIMIT 10;
 через пагинацию
 SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 10;
@@ -335,7 +328,6 @@ SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 10;
 ---
 
 ## DISTINCT
-
 
 Чтобы имена из примера выше не дублировались, сделаем такой запрос:
 SELECT DISTINCT first_name FROM users;
@@ -347,14 +339,12 @@ SELECT COUNT(DISTINCT first_name) FROM users;
 
 ## ФУНКЦИИ
 
-
 SELECT COUNT(*) FROM users WHERE birthday < '2018-10-21';
 
  count
 -------
     91
 (1 row)
-
 
 SELECT MAX(birthday) FROM users WHERE gender = 'male';
 
@@ -384,7 +374,6 @@ SELECT AVG(amount) FROM orders
 
 ## Группировка (GROUP)
 
-
 SELECT user_id, COUNT(*) FROM topics GROUP BY user_id;
 
 SELECT user_id, COUNT(*) FROM topics GROUP BY user_id ORDER BY count DESC LIMIT 3;
@@ -410,10 +399,9 @@ GROUP BY year_of_birthday
 ORDER BY year_of_birthday;
 -- END
 
-
+---
 
 ## Соединения (JOINS)
-
 https://postgrespro.ru/docs/postgresql/15/tutorial-join
 
 -- В выборке участвуют не все поля только для того, чтобы уместить
@@ -466,7 +454,6 @@ ORDER BY topics.created_at;
 
 ## Транзакционность ==0_0_*_*_*_0_0==
 
-
 BEGIN;
 SELECT amount FROM accounts WHERE user_id = 10;
 UPDATE accounts SET amount = amount - 50 WHERE user_id = 10;
@@ -496,8 +483,6 @@ CREATE INDEX ON users(birthday);
 EXPLAIN
 Денормализация
 Индексы
-
-
  
 ////// TEST /////
 
