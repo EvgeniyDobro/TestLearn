@@ -244,13 +244,10 @@ ALTER TABLE users ALTER COLUMN first_name SET NOT NULL;
 ---
 
 ## Сортировка (ORDER)
-
-SELECT * FROM users ORDER BY username;
-Прямой порядок сортировки
-Если ничего дополнительно не указывать, то ORDER BY сортирует в прямом порядке — от меньшего к большему.
-
-Чтобы выполнить сортировку в обратном порядке, указывается DESC:
-SELECT * FROM users ORDER BY created_at DESC;
+```sql
+SELECT * FROM users ORDER BY username; -- Прямой порядок сортировки, Если ничего дополнительно не указывать, то ORDER BY сортирует в прямом порядке — от меньшего к большему.
+SELECT * FROM users ORDER BY created_at DESC; -- Чтобы выполнить сортировку в обратном порядке, указывается DESC:
+```
 
 Сортировка по нескольким полям
 SELECT * FROM users ORDER BY first_name, created_at;
