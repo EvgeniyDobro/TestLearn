@@ -17,3 +17,12 @@ public class Program{   // начало объявления класса Progra
     }   // конец объявления нового метода
 } // конец объявления класса Program
 ```
+## Переменные и константы
+
+```java
+int x = 8, y = 15; // инициализация
+System.out.println(x);  // 8
+System.out.println(y);  // 15
+
+final int LIMIT = 5; // константа
+```
