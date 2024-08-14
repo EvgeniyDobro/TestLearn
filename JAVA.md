@@ -61,6 +61,12 @@ String text = """
                 """;
 System.out.println(text);
 ```
+#### Преобразование типов
+```java
+var number = Integer.parseInt("345"); // инициализация
+var result = (int) 5.1;               //  когда надо перевести из примитивного в примитивный тип данных
+```
+
 ## Арифметические операции
 ```java
 System.out.println(8 / 2); // => 4
