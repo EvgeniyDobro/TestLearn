@@ -40,23 +40,24 @@ du -h ### занимаемое место, по каталогам
 
 
 ```bash
-mv ### переместить, переименовать 
-ls ### просмотр файлов https://losst.pro/komanda-ls-linux
+### переместить, переименовать ###
+mv
+ls         ### просмотр файлов https://losst.pro/komanda-ls-linux
 find /KAFKADATA/ -iname "REPL.EKSPZRCLMEVENT.V1-2" #### поиск файла, папки - 
 find / -name "log4j*.properties" 2>/dev/null
 ( альтернатива locate )
 sed - https://losst.pro/komanda-sed-linux 
-sed -i 's/\r//' _имяфайла_ ### правим каретку, например, если закинул текстовый файл с windows
-$sed 's/unix/linux/' geekfile.txt ### Следующая команда заменит в целевом файле вхождения слова unix на linux:
-ls /usr/bin | sort -f | less ### удобный просмотр вывода
-ls | wc -w ### счетчик строк
+sed -i 's/\r//' _имяфайла_          ### правим каретку, например, если закинул текстовый файл с windows
+$sed 's/unix/linux/' geekfile.txt   ### Следующая команда заменит в целевом файле вхождения слова unix на linux:
+ls /usr/bin | sort -f | less        ### удобный просмотр вывода
+ls | wc -w                          ### счетчик строк
 ```
 
 ```bash
-mount ### посмотреть все смонтированные ФС
+mount                        ### посмотреть все смонтированные ФС
 sudo mount /dev/sd2i4 /users ### монтирование ФС
-umount ### демонтирование
-fuser -с /usr/home ### узнать какие прооцессы работают с ФС (например для демонтирования)
+umount                       ### демонтирование
+fuser -с /usr/home           ### узнать какие прооцессы работают с ФС (например для демонтирования)
 
 ```
 
