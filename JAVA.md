@@ -80,3 +80,10 @@ System.out.println(7 % 2); // => 1
 
 ## Методы с текстом
 
+```java
+.length() // длинна переданной строки
+
+var company = "Hexlet"; // получение символа из строки
+company.charAt(0)  // 'H'
+
+```
