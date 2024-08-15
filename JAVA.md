@@ -81,9 +81,16 @@ System.out.println(7 % 2); // => 1
 ## Методы с текстом
 
 ```java
-.length() // длинна переданной строки
+.length()                // длинна переданной строки
 
-var company = "Hexlet"; // получение символа из строки
-company.charAt(0)  // 'H'
+var company = "Hexlet";  // получение символа из строки
+company.charAt(0)        // 'H'
 
+var name = "fish \n";   // удаляем проблема по краям и переносы
+name = name.trim();     // "fish"
+
+.replace(" ", "-")            // заменяем дефисы вместо пробелов
+.toLowerCase().toUpperCase() // в нижний регистр и верхний регистр
+
+ 
 ```
