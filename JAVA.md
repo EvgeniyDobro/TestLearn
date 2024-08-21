@@ -129,4 +129,17 @@ class App {
     }
 }
 ```
+задаем параметр у метода
+```java
+class App {
+    // Метод по нахождению среднего числа
+    // Возвращаемый тип — double, потому что
+    // при делении может получиться дробное число
+    public static double average(int x, int y) {
+        return (x + y) / 2.0;
+    }
+}
 
+App.average(1, 5); // 3.0
+App.average(1, 2); // 1.5
+```
