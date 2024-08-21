@@ -143,3 +143,16 @@ class App {
 App.average(1, 5); // 3.0
 App.average(1, 2); // 1.5
 ```
+ПЕРЕГРУЗКА МЕТОДОВ
+```java
+class App {
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+
+    public static int sum(int x) {
+        // Вызываем уже готовый метод суммирования
+        return sum(x, 10);
+    }
+}
+```
