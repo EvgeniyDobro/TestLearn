@@ -121,3 +121,12 @@ public class App {
 // Обязательно указывать имя класса
 App.showCurrentDate(); // => Today is: 2021-10-25
 ```
+
+```java
+class App {
+    public static String greeting() {  // указываем тип возвращаемого значения 
+        return "Winter is coming!";    // возвращаем значение
+    }
+}
+```
+
