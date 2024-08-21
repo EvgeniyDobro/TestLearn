@@ -40,14 +40,18 @@ du -h ### занимаемое место, по каталогам
 https://losst.pro/komanda-sed-linux  sed  
 
 ```bash
-mv                                                 ### переместить, переименовать 
 ls                                                 ### просмотр файлов https://losst.pro/komanda-ls-linux
+ls /usr/bin | sort -f | less                       ### удобный просмотр вывода
+ls | wc -w                                         ### счетчик строк
+### -t/-tr по времени изменения ### -a все файлы ### -R рекурсивно ### -l списком -h удобное отображение размера
+```
+
+```bash
+mv                                                 ### переместить, переименовать 
 find /KAFKADATA/ -iname "REPL.EKSPZRCLMEVENT.V1-2" #### поиск файла, папки - 
 find / -name "log4j*.properties" 2>/dev/null       #### ( альтернатива locate )
 sed -i 's/\r//' _имяфайла_                         ### правим каретку, например, если закинул текстовый файл с windows
 $sed 's/unix/linux/' geekfile.txt                  ### Следующая команда заменит в целевом файле вхождения слова unix на linux:
-ls /usr/bin | sort -f | less                       ### удобный просмотр вывода
-ls | wc -w                                         ### счетчик строк
 find logs/ -type f -mtime +60 -delete              ### удаляем старше 60 дней
 du -sh logs                                        ### смотри размер папки
 less                                               ### просмотр файла, shift + g последнее сообщение; shift + f лайф режим
