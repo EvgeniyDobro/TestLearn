@@ -89,6 +89,21 @@ System.out.println(7 % 2); // => 1
 | == | равно |
 | != | не равно |
 
+Сравнения
+
+```java
+
+var name1 = "java".toUpperCase(); // "JAVA"
+var name2 = "java".toUpperCase(); // "JAVA"
+name1.equals(name2); // true
+
+Помимо equals(), в строки встроен метод equalsIgnoreCase(), который выполняет проверку по значению без учета регистра:
+
+var name1 = "java".toUpperCase(); // "JAVA"
+var name2 = "java".toLowerCase(); // "java"
+name1.equalsIgnoreCase(name2); // true
+
+```
 
 ## Методы
 
