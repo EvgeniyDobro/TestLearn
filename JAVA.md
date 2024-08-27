@@ -7,6 +7,8 @@ n # Java
 
 [раздел "Логические операции"](#Логические-операции)
 
+[раздел "Условные конструкции"](#Условные-конструкции)
+
 [раздел "Методы"](#Методы) [раздел "Методы с текстом"](#Методы-с-текстом)
 
 [раздел "Определение методов"](#Определение-методов) 
@@ -104,6 +106,39 @@ var name2 = "java".toLowerCase(); // "java"
 name1.equalsIgnoreCase(name2); // true
 
 ```
+
+## Условные конструкции
+
+```java
+App.getTypeOfSentence("Who?"); // "Sentence is question"
+App.getTypeOfSentence("No");   // "Sentence is general"
+App.getTypeOfSentence("No!");  // "Sentence is exclamation"
+
+public static String getTypeOfSentence(String sentence)
+{
+    var sentenceType = "";
+
+    if (sentence.endsWith("?")) {
+        sentenceType = "question";
+    } else if (sentence.endsWith("!")) {
+        sentenceType = "exclamation";
+    } else {
+        sentenceType = "general";
+    }
+
+    return "Sentence is " + sentenceType;
+}
+
+```
+
+Тернарный оператор
+```java
+// Если больше нуля, то выдаем само число. Если меньше, то убираем знак
+public static int abs(int number) {
+    return number >= 0 ? number : -number;
+}
+```
+
 
 ## Методы
 
