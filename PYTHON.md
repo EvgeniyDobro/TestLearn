@@ -73,8 +73,10 @@ len(name) # длинна строки
 name = 'Python'
 # Возвращает индекс первого вхождения буквы в строку
 name.find('t')  # 2
+
 # Переводит в нижний регистр
 name.lower()  # 'python'
+
 # Заменяет одну подстроку другой
 name.replace('on', 'off')  # 'Pythoff'
 
@@ -109,6 +111,13 @@ print(value)  # => 4.2
 
 type() # определение типа
 
+# Аннотации типов 
+def concat(first: str, second: str) -> str:
+    return first + second
+
+def double(n: int) -> int:
+    result: int = n * 2
+    return result
 ```
 
 ## Математика
