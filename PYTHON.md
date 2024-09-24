@@ -156,3 +156,32 @@ def pow(x, base=2):
 ```
 Тело функции может быть пустым, тогда внутри него используется ключевое слово pass
 
+### Условные окнструкции
+
+```python
+def get_type_of_sentence(sentence):
+    last_char = sentence[-1]
+
+    if last_char == '?':
+        sentence_type = 'question'
+    elif last_char == '!':
+        sentence_type = 'exclamation'
+    else:
+        sentence_type = 'normal'
+
+    return 'Sentence is ' + sentence_type
+
+print(get_type_of_sentence('Who?'))  # => 'Sentence is question'
+print(get_type_of_sentence('No'))    # => 'Sentence is normal'
+print(get_type_of_sentence('No!'))   # => 'Sentence is exclamation'
+```
+
+### Тернарный оператор
+
+```python
+def abs(number):
+    return number if number >= 0 else -number
+```
+
+
+
