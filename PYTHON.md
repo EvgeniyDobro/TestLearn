@@ -174,6 +174,18 @@ def get_type_of_sentence(sentence):
 print(get_type_of_sentence('Who?'))  # => 'Sentence is question'
 print(get_type_of_sentence('No'))    # => 'Sentence is normal'
 print(get_type_of_sentence('No!'))   # => 'Sentence is exclamation'
+
+### ### ### ### ###
+
+def normalize_url(url):
+    https = 'https://'
+    if url[:8] == https:
+        return url
+    elif url[:7] == 'http://':
+        return https + url[7:]
+    else:
+        return https + url
+
 ```
 
 ### Тернарный оператор
@@ -183,5 +195,53 @@ def abs(number):
     return number if number >= 0 else -number
 ```
 
+### Оператор match
+
+```python
+def match_input(input):
+    match input:
+        case 'start' | 'begin':
+            print('Starting...')
+        case 'stop' | 'end':
+            print('Stopping...')
+        case 'pause':
+            print('Pausing...')
+        case _:
+            print('Invalid input')
+
+match_input('begin')  # => Starting...
+match_input('stop')  # => Stopping...
+match_input('pause')  # => Pausing...
+match_input('test')  # => Invalid input
+```
+
+проверка типов
+```python
+def get_type(val):
+    match val:
+        case str(val):
+            print(f'It is a string: {val}')
+        case int(val):
+            print(f'It is an integer: {val}')
+        case _:
+            print("I don't know this type")
+
+get_type('hello')  # => It is a string: hello
+get_type(123)  # => It is an integer: 123
+get_type(None)  # => I don't know this type
+
+```
+
+### Циклы
+
+```python
+def print_numbers(last_number):
+    i = 1
+    # Этот цикл никогда не остановится
+    # и будет печатать всегда одно значение
+    while i <= last_number:
+        print(i)
+    print('finished!')
+```
 
 
