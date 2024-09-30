@@ -244,4 +244,15 @@ def print_numbers(last_number):
     print('finished!')
 ```
 
+```python
+### проверяем есть ли символ, вне зависимости от регистра
+def has_char(string, char):
+    index = 0
+    uppercase_char = char.upper()
+    while index < len(string):
+        if string[index].upper() == uppercase_char:
+            return True
+        index += 1
+    return False
+```python
 
