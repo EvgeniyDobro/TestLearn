@@ -254,5 +254,5 @@ def has_char(string, char):
             return True
         index += 1
     return False
-```python
+```
 
