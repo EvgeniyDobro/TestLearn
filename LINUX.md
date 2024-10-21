@@ -58,6 +58,7 @@ sed -i 's/\r//' _имяфайла_                         ### правим ка
 $sed 's/unix/linux/' geekfile.txt                  ### Следующая команда заменит в целевом файле вхождения слова unix на linux:
 find logs/ -type f -mtime +60 -delete              ### удаляем старше 60 дней
 du -sh logs                                        ### смотри размер папки
+du -sh logs 2>/dev/null
 less                                               ### просмотр файла, shift + g последнее сообщение; shift + f лайф режим
 ```
 
