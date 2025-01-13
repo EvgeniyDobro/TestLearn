@@ -9,7 +9,7 @@
 
 [раздел "Математика"](#Математика)
 
-[раздел "Функции"](#Функции)
+[раздел "Функции"](#Функции) [For](#For)
 
 ## Операции
 
@@ -57,7 +57,6 @@ print(f'{greeting}, {first_name}!')
 ```
 
 **multi-line строки**
-
 ```python
 text = '''Пример текста,
 состоящего из
@@ -256,5 +255,18 @@ def has_char(string, char):
             return True
         index += 1
     return False
+```
+
+### For
+
+У range() есть несколько вариантов использования:
+
+range(stop) создает последовательность от 0 до stop - 1
+range(start, stop) создает последовательность от start до stop - 1
+range(start, stop, step) создает последовательность из чисел от start до stop - 1, с шагом step
+
+```python
+for i in range(1, 4):
+    print(i)
 ```
 
