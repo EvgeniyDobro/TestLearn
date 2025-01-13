@@ -9,7 +9,7 @@
 
 [раздел "Математика"](#Математика)
 
-[раздел "Функции"](#Функции) [For](#For)
+[раздел "Функции"](#Функции) | [For](#For)
 
 ## Операции
 
@@ -268,5 +268,11 @@ def has_char(string, char):
 ```python
 for i in range(1, 4):
     print(i)
+```
+с текстом
+```python
+text = 'code'
+for symbol in text:
+    print(symbol)
 ```
 
