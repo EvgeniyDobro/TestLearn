@@ -275,4 +275,29 @@ text = 'code'
 for symbol in text:
     print(symbol)
 ```
+проверяем, полидром ли слово
+
+```python
+def is_palindrome(word):
+    for i in range(0, len(word)):
+        if word[i] != word[len(word)-1-i]:
+            return False
+    return True
+
+def is_palindrome(string):
+    pointer1 = 0
+    pointer2 = len(string) - 1
+    while pointer2 - pointer1 > 0:
+        if string[pointer1] != string[pointer2]:
+            return False
+        pointer1 += 1
+        pointer2 -= 1
+    return True
+
+
+# Alternative solution
+#  def is_palindrome(string):
+#      return string == string[::-1]
+
+```
 
