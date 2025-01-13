@@ -261,9 +261,9 @@ def has_char(string, char):
 
 У range() есть несколько вариантов использования:
 
-range(stop) создает последовательность от 0 до stop - 1
-range(start, stop) создает последовательность от start до stop - 1
-range(start, stop, step) создает последовательность из чисел от start до stop - 1, с шагом step
+* range(stop) создает последовательность от 0 до stop - 1
+* range(start, stop) создает последовательность от start до stop - 1
+* range(start, stop, step) создает последовательность из чисел от start до stop - 1, с шагом step
 
 ```python
 for i in range(1, 4):
