@@ -1,15 +1,11 @@
 # PYTHON
 [раздел "Операции](#Операции)
-
 [раздел "Переменные"](#Переменные)
-
 [раздел "СТРОКИ"](#СТРОКИ)
-
 [раздел "ТИППЫ ДАННЫХ"](#ТИППЫ-ДАННЫХ)
-
 [раздел "Математика"](#Математика)
-
 [раздел "Функции"](#Функции) | [Циклы](#Циклы) | [For](#For)
+[раздел "Модули"](#Модули)
 
 ## Операции
 
@@ -298,6 +294,32 @@ def is_palindrome(string):
 # Alternative solution
 #  def is_palindrome(string):
 #      return string == string[::-1]
+```
+
+## Модули
+
+```python
+# file: main.py
+import greeting
+
+# вызываем функцию модуля
+greeting.say_hi()  # => Hi!
+
+# выводим на экран отдельную переменную
+print(greeting.name)  # => Bob
 
 ```
 
+```python
+# file: main.py
+from greeting import say_hi, name # импортируем отдельные компоненты модуля
+
+print(name)  # используем импортированную переменную
+say_hi()     # вызываем импортированную функцию
+
+# file: main.py
+from greeting import say_hi as hello, name as first_name
+
+print(first_name)
+hello()
+```
