@@ -78,6 +78,10 @@ print()
 
 print('bool to int:  ', c, '->', int(c))
 print('bool to float:', c, '->', float(c))
+
+аналогично со строками
+years = int(input('Введите количество лет:'))
+percent = float(input('ведите процентную ставку:'))
 ```
 ## СТРОКИ
 
