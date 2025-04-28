@@ -1,6 +1,7 @@
 # Регулярные выражения
 #### ссылки
 >https://regex101.com/
+>Why does my regular expression work in X but not in Y? https://unix.stackexchange.com/questions/119905/why-does-my-regular-expression-work-in-x-but-not-in-y
 
 
 . — любой символ
