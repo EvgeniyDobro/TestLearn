@@ -401,43 +401,37 @@ ORDER BY year_of_birthday;
 ## Соединения (JOINS)
 https://postgrespro.ru/docs/postgresql/15/tutorial-join
 
--- В выборке участвуют не все поля только для того, чтобы уместить
--- ее на экран, а вообще здесь можно использовать `*`
+// В выборке участвуют не все поля только для того, чтобы уместить
+// ее на экран, а вообще здесь можно использовать `*`
+
+```sql
 SELECT first_name, title
   FROM users JOIN topics ON users.id = topics.user_id LIMIT 5;
+```
 
- first_name |            title
-------------+------------------------------
- Sean       | beatae voluptatem commodi
- Wyatt      | tempora accusamus nostrum
- Oleta      | eaque fugiat consequatur
- Brandon    | aut exercitationem expedita
- Domenica   | voluptatem soluta similique
 
 Общий синтаксис выглядит так:
+```sql
 SELECT * FROM table1 JOIN table2 ON table1.id_field_name = table2.id_field_name
+```
 
 JOIN — это сокращенная версия соединения INNER JOIN, то есть внутреннего соединения.
 
+```sql
 SELECT first_name, title FROM users
   LEFT JOIN topics ON users.id = topics.user_id LIMIT 5;
+```
 
-first_name |            title
-------------+------------------------------
- Sean       | beatae voluptatem commodi
- Wyatt      | tempora accusamus nostrum
- Mia        |
- Royal      |
- Enos       | et eos dicta
-
+```sql
 SELECT COUNT(*)
   FROM users
   LEFT JOIN topics ON users.id = topics.user_id
   WHERE title IS NULL;
-
+```
 
 ///test///
 
+```sql
 SELECT
     topics.id,
     users.first_name
@@ -445,7 +439,7 @@ FROM topics
 INNER JOIN users ON topics.user_id = users.id
 WHERE users.email LIKE '%@lannister.com'
 ORDER BY topics.created_at;
-
+```
 
 ---
 
