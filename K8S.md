@@ -17,3 +17,9 @@ Master Node vs Slave Node
 
 ## Управление кластером
 ![Image alt](https://github.com/EvgeniyDobro/TestLearn/raw/main/pic/k8s-cluster-control.jpg)
+
+
+
+## Deployment
+
+>Deployment – это объект Kubernetes, который описывает в скольких экземплярах запущен сервис, а также стратегию обновления на новую версию. 
